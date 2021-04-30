@@ -11,6 +11,9 @@
         "negotiator": "0.6.2"
       }
     },
+"scripts": {
+  "start": "node server.js"
+},
     "alert": {
       "version": "5.0.4",
       "resolved": "https://registry.npmjs.org/alert/-/alert-5.0.4.tgz",
