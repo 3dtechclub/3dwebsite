@@ -18,6 +18,8 @@
 },
   "homepage": ""
 }
+{ "engines" : { "node" : ">=0.12" } }
+{ "engineStrict" : true }
 {"requires": true,
   "lockfileVersion": 1,
   "dependencies": {
