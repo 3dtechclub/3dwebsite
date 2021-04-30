@@ -15,7 +15,7 @@ var express     = require("express"),
     ContactUsRoute=require("./routes/ContactUsRoute"),
     ProjectRoute=require("./routes/ProjectRoute"),
     MemberRoute=require("./routes/MemberRoute"),
-    
+    express.static(path.join(__dirname, '/3D'));
     session = require("express-session"),
     flash=require('express-flash'),
     methodOverride = require("method-override");
