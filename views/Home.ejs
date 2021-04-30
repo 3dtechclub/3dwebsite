@@ -1,0 +1,207 @@
+<% include partials/header.ejs %>
+<style>
+  .ui.circular.button{
+      border: 2.5px grey solid;
+      opacity:0;
+      animation: popUpAnimation ease-in 1s 0s forwards;
+      transition: ease 0.5s;
+    }
+    #profileModal{
+      filter: invert(100%);
+    }
+    #staticBackdrop{
+      filter: invert(100%);
+    }
+    .modal-content{
+      background-color:invert;
+    }
+    html{
+      filter: invert(100%);
+    }
+    img{
+      filter: invert(100%);
+    }
+    #profdrop{
+      height: 46.13px;width: 45.57px;
+    }
+    .ui.circular.button:hover{
+      filter: invert(100%);
+      transition: ease 0.5s;
+    }
+    #top-navbar{
+        filter:contrast(98%);
+    }
+    #Sear{
+        visibility: hidden;
+    }
+    
+    #intro{
+        opacity: 0;
+        animation: popUpAnimation 0.75s 0.2s ease forwards;
+        text-align: justify;padding-right: 4%;padding-left: 4%;
+        font-size: large;
+        font-style:oblique;
+    }
+    
+    #categories{
+        margin-top: 50px;
+    }
+    .item{
+      opacity: 0;
+    }
+    #home-top{
+        height:400px;
+    }
+    @media screen and (max-width: 568px) {
+        #home-top{
+            height: 600px;
+        }
+    }
+    .eventappear{
+  
+  animation: popUpAnimation ease 0.75s ;
+  animation-delay: 1s;
+        animation-iteration-count: 1; 
+        animation-fill-mode: forwards;
+        -webkit-animation: popUpAnimation ease 0.75s;
+        -webkit-animation-iteration-count: 1; 
+        -webkit-animation-fill-mode: forwards;
+}
+</style>
+<body>
+    <div class="d-flex" id="home-top" style="flex-wrap:wrap;  font-weight: 600 ; background-image: url('https://image.freepik.com/free-vector/white-digital-matrix-binary-code-numbers-background_1017-25332.jpg');background-repeat: no-repeat;background-blend-mode: overlay;">
+    <div class="col-md-6 my-auto" style="text-align: center;">
+    <svg id="e54jkf08ho651" style="width:max-content;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 350 296.999990" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+        <style>
+            <![CDATA[#e54jkf08ho653 { animation: e54jkf08ho653_c_o 7000ms ease-in 1s 1 normal forwards}@keyframes e54jkf08ho653_c_o { 0% {opacity: 0} 20% {opacity: 1} 100% {opacity: 1} }#e54jkf08ho656 {animation: e54jkf08ho656_c_o 5000ms linear 1s 1 normal forwards}@keyframes e54jkf08ho656_c_o { 0% {opacity: 0} 40% {opacity: 0} 56.666667% {opacity: 0.750000} 100% {opacity: 0.750000} }#e54jkf08ho657 {animation: e54jkf08ho657_c_o 5000ms linear 1.25s 1 normal forwards}@keyframes e54jkf08ho657_c_o { 0% {opacity: 0} 56.666667% {opacity: 0} 73.333333% {opacity: 0.750000} 100% {opacity: 0.750000} }#e54jkf08ho658 {animation: e54jkf08ho658_c_o 5000ms linear 1.5s 1 normal forwards}@keyframes e54jkf08ho658_c_o { 0% {opacity: 0} 73.333333% {opacity: 0} 90% {opacity: 0.750000} 100% {opacity: 0.750000} }]]>
+            
+            #e54jkf08ho655{
+         fill: none;
+        stroke: #4654A3;
+        stroke-width: 3.847000;
+    
+    /* Stroke-dasharray property */
+        stroke-dasharray: 60.32px;
+        stroke-dashoffset: 60.32px;
+        animation-name: move ;
+        animation-duration: 0.3s;
+        animation-delay: 1.8s;   
+        animation-timing-function: cubic-bezier(0.95, 0.09, 0.795, 0.035);
+         animation-fill-mode: forwards;
+         -webkit-animation-fill-mode: forwards;
+    
+    }
+            #e54jkf08ho654{
+                fill: none;
+        stroke: #4654A3;
+        stroke-width: 3.847000;
+    
+    /* Stroke-dasharray property */
+        stroke-dasharray: 60.32px;
+        stroke-dashoffset: 60.32px;
+        animation-name: move ;
+        animation-duration: 0.3s;
+        animation-delay: 2.15s;   
+        animation-timing-function: cubic-bezier(0.09, 0.95, 0.135, 0.795);
+         animation-fill-mode: forwards;
+         -webkit-animation-fill-mode: forwards;
+            }
+    @keyframes move {
+        100% {
+            stroke-dashoffset: 120.64;
+        }
+        }
+        </style>
+        <g id="e54jkf08ho652">
+            <text id="e54jkf08ho653" dx="0" dy="0" font-family="&quot;Playfair Display&quot;" font-size="158.750000" font-weight="bold" transform="matrix(1 0 0 1 69.51862499999956 177.38075640343877)" opacity="0" fill="#270949" stroke="none" stroke-width="0.264583">
+                <![CDATA[3D]]>
+            </text>
+            <path id="e54jkf08ho654" d="M226.367510,5.708881C195.671970,57.628380,195.671970,57.628380,195.671970,57.628380" fill="none" stroke="rgb(0,0,0)" stroke-width="3.847000"/>
+            <path id="e54jkf08ho655" d="M137.082460,241.249490C106.317310,293.206430,106.317310,293.206430,106.317310,293.206430" transform="matrix(1 0 0 1 10.67141599999992 -49.86282860000011)" fill="none" stroke="rgb(0,0,0)" stroke-width="3.768210" />
+            <text id="e54jkf08ho656" dx="0" dy="0" font-family="&quot;Josefin Sans&quot;" font-size="21.166700" transform="matrix(1 0 0 1 37.73403850000015 265.00377739999999)" opacity="0" fill="#270949" stroke="none" stroke-width="1">
+                <![CDATA[Data]]>
+            </text>
+            <text id="e54jkf08ho657" dx="0" dy="0" font-family="&quot;Josefin Sans&quot;" font-size="21.166700" transform="matrix(1 0 0 1 99.72286350000016 265.74930739999996)" opacity="0" fill="#270949" stroke="none" stroke-width="1">
+                <![CDATA[Design]]>
+            </text>
+            <text id="e54jkf08ho658" dx="0" dy="0" font-family="&quot;Josefin Sans&quot;" font-size="21.166700" transform="matrix(1 0 0 1 176.83446150000015 265.74930739999996)" opacity="0" fill="#270949" stroke="none" stroke-width="1">
+                <![CDATA[Development]]>
+            </text>
+        </g>
+    </svg>
+</div>
+<div class="col-md-6 my-auto">
+    <h2 style="text-align: center;padding-bottom: 5%;animation: fadeInUpAnimation 0.6s 0s ease;font-style: oblique;"><strong>Welcome</strong></h2>
+    <div id="intro"> 3D club is on its way to bolster your excitement in learning Data Science, AI, ML, and UI/UX Design. Improve your approach and skills with us to compete with data scientists around the world. Learn from the community, and fuel your talent. Read thought-provoking and informative articles to gain perspective. Interact with people who are well seasoned and train your proficiency. </div>
+
+        
+</div>
+</div>
+<div class="container" id="categories">
+<div class="ui items">
+    <div class="item">
+      <div class="ui large image">
+        <img src="https://i.ibb.co/pn3Qr8q/ux-ui-01-3.jpg">
+      </div>
+      <div class="content" style="font-weight: 500;font-size: 16px;">
+        <a class="header">UI/UX</a>
+        <div class="meta">
+          <span style="text-align: justify;">For a substantial design work experience, UI/UX projects are worth showcasing and help in having an impressive design portfolio. Through the projects taken and online competitions participated by the club, one can exercise their full-stack UX/UI and design skills.</span style="text-align: justify;">
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="ui large image">
+        <img src="https://i.ibb.co/qJwm6Mg/data-science-shutterstock-746652745.jpg">
+      </div>
+      <div class="content" style="font-weight: 500;font-size: 16px;">
+        <a class="header">DATA SCIENCE</a>
+        <div class="meta">
+          <span style="text-align: justify;">If you want to break into competitive data science, participating in productive modelling competitions can help in gaining practical knowledge, improving and harnessing the data modelling skills in various domains. We can push each other limit that would result in better performance and smaller prediction errors.</span style="text-align: justify;">
+        </div>
+      </div>
+    </div>
+    <div class="item">
+        <div class="ui large image">
+          <img src="https://i.ibb.co/BGJQ89Q/photo-1542435503-956c469947f6-ixid-MXwx-Mj-A3f-DB8-MHxwa-G90by1w-YWdlf-Hx8f-GVuf-DB8f-Hw-ixlib-rb-1.jpg">
+        </div>
+        <div class="content" style="font-weight: 500;font-size: 16px;">
+          <a class="header">BLOGS AND WRITE-UPS</a>
+          <div class="meta">
+            <span style="text-align: justify;">We create mindboggling and creative blogs and content on interesting events around us exploiting data analytics for transforming and modelling data to represent useful information, informing conclusions and supporting decision making.</span>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+</body>
+<script>
+  const appearOptions={
+              threshold:0.4,
+              
+            };
+            $(document).ready(function(){
+            const faders=document.querySelectorAll('.item');
+            const appearOnScroll=new IntersectionObserver(function(entries,appearOnScroll) 
+            {
+              entries.forEach(entry => {
+                if(!entry.isIntersecting){
+                  return;
+                }
+                else{
+                  entry.target.classList.add('eventappear');
+                  appearOnScroll.unobserve(entry.target);
+                }
+              })
+            },
+            appearOptions);
+            faders.forEach(fader => {
+              appearOnScroll.observe(fader);            
+            });
+            
+          });
+          
+  
+</script>
+<%include partials/footer.ejs %>
