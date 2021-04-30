@@ -11,6 +11,7 @@
         "negotiator": "0.6.2"
       }
     },
+{ "engines" : { "node" : ">=0.12" } },
 "scripts": {
   "start": "node server.js"
 },
