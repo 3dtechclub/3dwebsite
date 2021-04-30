@@ -18,7 +18,7 @@
 },
   "homepage": ""
 }
-  "requires": true,
+{"requires": true,
   "lockfileVersion": 1,
   "dependencies": {
     "accepts": {
