@@ -1,0 +1,59 @@
+<a href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=https://www.google.com" target="_blank" rel="noopener" class="ui circular green icon large button">
+    <i class="whatsapp icon"></i>
+</a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.google.com%2F&amp;src=sdkpreparse" target="_blank" class="ui circular facebook icon large button" class="fb-xfbml-parse-ignore" data-href="https://www.google.com">
+    <i class="facebook icon"></i>
+</a>
+<a href="https://twitter.com/intent/tweet?via=theMemer&url=https%3A%2F%2Fwww.google.com&text=place%20website%20name%20here" target="_blank" rel="noopener" class="ui circular twitter large icon button">
+    <i class="twitter icon"></i>
+</a>
+<a href="" target="_blank" class="ui circular icon large button">
+    <i class="envelope icon"></i>
+</a>
+
+
+
+<div class="ui vertical menu">
+  <div class="ui dropdown item">
+    Categories
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <a class="item">Electronics</a>
+      <a class="item">Automotive</a>
+      <a class="item">Home</a>
+    </div>
+  </div>
+</div>
+
+
+.card:hover{
+        border-color: rgba(239, 241, 244, 0.6);
+        border-radius: 10px 10px 10px 10px;border-width: 4px;padding: 1px;
+        background-color: rgba(239, 241, 244, 0.2);
+      }
+
+      rgba(239, 241, 244, 0.2);
+
+
+
+     <form action="" class="form-inline" style="width: 50%;border-radius: 25px; background-color: rgba(214, 215, 216,0.3);">
+                    <div class="col-auto" style="position: relative;width: 100%;">
+                        <input class="submit" class="form-control" style="border-width: 0px;background-color:rgba(0, 0, 0, 0); padding: 0px;"><i class="fas fa-search"></i></button>
+                        <input class="form-control" type="search" placeholder="Search" style=" background-color: rgba(214, 215, 216,0);border-width: 0px;width: 100%;padding-left: 40px;border-radius: 25px 25px;">
+                        
+                    </div>
+                </form>
+
+
+
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text" ><i class="fas fa-search"></i></div>
+                      </div>
+                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search">
+                    </div>
+                  </div>
+                
+                
