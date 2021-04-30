@@ -90,10 +90,10 @@ app.use(ContactUsRoute);
 app.use(MemberRoute);
 app.use(ProjectRoute);
 
+var port=process.env.PORT || 8080;
 
-
-app.listen(2000,function(){
-    console.log("Server active at port 2000");
+app.listen(port,function(){
+    console.log("Server active at port 8080");
 });
 //app.listen(process.env.PORT, process.env.IP, function(){
 //   console.log("The 3D Server Has Started!");
