@@ -1,0 +1,163 @@
+<% include partials/header.ejs %>
+<style>
+body{
+  background-color: rgba(239, 241, 244, 0.5);
+}
+#hidden{
+  color:#212529;
+  border-width: 0px;
+  background-color: transparent;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+#hidden:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#more{
+  margin-bottom: 10px;color:#212529;
+  background-color: transparent;
+}
+#more:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.dropleft{
+  position: absolute;
+  right:6%;
+}
+.tile{
+  justify-content: center;
+  width: 65px;
+}
+.row{
+  text-align: center;
+}
+#eventdisplay{
+  flex-wrap: wrap;padding: 1%;background-color: white;border-radius: 10px;position: relative;margin-top: 20px;
+}
+#dispimage{
+  margin-top:20px;
+}
+
+</style>
+<script type="text/javascript">
+  $(window).on('load',function(){
+      $('#myModal').modal('show');
+  });
+</script>
+<a href="javascript:history.back()" class="ui circular large icon button" id="hidden" >
+     <i class="arrow left icon"></i>
+  </a>
+        <div class="container d-flex align-items-top" id="eventdisplay" >
+            <div id="dispimage">
+              <img src="<%= thisEvent.image %>" class="card-img-top "  style="border-radius: 10px 10px 10px 10px;">
+            </div>
+              
+                  <div class="align-items-stretch" style="text-align: center;" style="display: block;">
+                    <p>
+                  <div style="display: inline;" id="name"><h1><strong><%= thisEvent.name %></h1><strong> <h3><%= thisEvent.category %></h3></div></p>
+                    <p>on</p>
+                  <div><h2><%=thisEvent.edate.toString().substring(0,16) %></h2></div>
+                  <div>
+                    <p>
+                    <h3><%= thisEvent.etime %> onwards</h3></p>
+                  </div>
+                  <p>
+                  <div style="text-align: center;"><h2><strong><%=thisEvent.venue%></strong></h2> </div>
+                </p>
+                  
+                  <div><button class="ui button" ><a style="color: grey;" href="<%= thisEvent.reglink %>" target="_blank">Register</a></button></div>
+                  <% if((currentUser)&&(currentUser.isAdmin==true)){ %>
+                  <div class="row justify-content-center">
+                     <button style="border-color: rgba(0, 0, 0, 0.0);" class="ui inverted large circular button" data-toggle="modal" data-target="#exampleModal" style="border-radius: 100%;"><a style="color: crimson;"><i class="fas fa-trash fa-lg"></i></a></button>
+                    <button style="border-color: rgba(0, 0, 0, 0.0);" class="ui inverted large circular button" data-toggle="modal" data-target="#updateModal"><a style="color: grey;" ><i class="fas fa-pen fa-lg"></i></a></button style="border-color: rgba(0, 0, 0, 0.0);">
+                    <% if(thisEvent.expired==true){ %><button style="border-color: rgba(0, 0, 0, 0.0);" class="ui inverted large circular button"><a style="color: grey;" href="/Event/<%= thisEvent.id %>/notExpired"><i class="fas fa-check-circle fa-lg"></i></a></button style="border-color: rgba(0, 0, 0, 0.0);"><% }else{ %>
+                    <button style="border-color: rgba(0, 0, 0, 0.0);" class="ui inverted large circular button"><a style="color: grey;" href="/Event/<%= thisEvent.id %>/expired"><i class="far fa-check-circle fa-lg"></i></a></button style="border-color: rgba(0, 0, 0, 0.0);"> <% } %>
+                  </div>
+                  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        The selected event will be permanently deleted. Do you wish to proceed?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"><a style="color: white;" href="/Event/<%= thisEvent.id %>/remove">Delete</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+        <form class="form justify-content-center" action="/Event/<%= thisEvent.id %>/edit" method="POST">
+          <div class="form-group row justify-content-around">
+              <div class="form-group "><label for="name" class="col-form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="The Manhattan Project" name="name" value="<%= thisEvent.name %>"></div>
+              <div class="form-group"><label for="category" class="col-form-label">Category</label>
+              <input list="categories" class="form-control"id="category" name="category" placeholder="category" value="<%= thisEvent.category %>"> </div>                           
+          <datalist id="categories">
+              <option value="Seminar">Seminar</option>
+              <option value="Quiz">Quiz</option>
+          </datalist>
+          </div>
+          <div class="form-group row justify-content-around">
+              <div class="form-group justufy-content-between">
+              <label for="edate" class="col-form-label">Date</label>
+              <input type="date" class="form-control" name="edate" id="edate" value="<%= thisEvent.edate.toISOString().substring(0,10) %>"></div>
+              <div class="form-group"><label for="etime" class="col-form-label">Time</label>
+              <input type="time" class="form-control" name="etime" id="etime" value="<%= thisEvent.etime %>"></div>
+              <div class="form-group"><label for="evenue" class="col-form-label">Venue</label>
+                <input type="text" class="form-control" name="venue" placeholder="Venue" id="evenue" value="<%= thisEvent.venue %>"></div>
+          </div>
+          <div class="form-group">
+              <label for="image"class="col-form-label">Image</label>
+              <input type="url" class="form-control" id="image" placeholder="URL" name="image" value="<%= thisEvent.image %>">
+          </div>
+          <div class="form-group">
+              <label for="description" class="col-form-label">Description</label>
+              <textarea name="description" class="form-control" id="description" cols="30" rows="10">
+                  <%= thisEvent.description %>
+              </textarea>
+          </div>
+          
+          <div class="form-group">
+              <label for="reglink" class="col-form-label">Registration Link</label>
+              <input type="text" class="form-control" name="reglink" placeholder="www.google.com" id="reglink" value="<%= thisEvent.reglink %>">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+                  <% } %>
+                </div>
+                  <div class="jumbotron" style="background-color: rgba(0, 0, 0, 0.0);"><p style="text-align: justify;"><%=thisEvent.description %></p></div>
+             
+         
+        </div>
+        <p><h1 style="text-align: center;">Similar Events</h1></p>
+  
+  <% include Showimg.ejs %>        
+
+
+
+
+                        
+                       

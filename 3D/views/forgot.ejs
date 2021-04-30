@@ -1,0 +1,31 @@
+<% include ./partials/header %>
+<style>
+    #Sear{
+        visibility: hidden;
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
+<div class="container">
+    
+	<div class="login-box" >
+		<div class="" style="justify-content: center;text-align: center;">
+				<div class="login-logo">
+					<img src="../images/3D.png" alt="3D" class="logo" width="" height="27">
+                <span style="font-family: 'Knewave', cursive;font-size: x-large;">3DtechClub</span>
+				</div>
+				<h4>Follow these simple steps to get into your account</h4>
+				<ul style="text-align: justify;margin-right: 10%;margin-top: 10px;">
+					<li>Enter your registered email address.</li>
+					<li>You will receive a password reset link via your registered email.</li>
+					<li>Access the link and set your new password.</li>
+				</ul>
+				<form action="/user/forgot" method="POST" autocomplete="off" style="text-align: center;">
+					<div class="login-form">
+					<input class="form-control" type="text" name="email" placeholder="Email Address" required>
+					</div>
+					<button class="btn btn-primary" value="Reset Password" style="width: 80%;">Continue</button>
+				</form>			  
+		</div>
+	</div>
+	</div>
+<% include ./partials/footer %>

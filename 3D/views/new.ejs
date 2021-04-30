@@ -1,0 +1,46 @@
+<style>
+    input{
+        text-align: center;
+    }
+</style>
+<% include partials/header.ejs %>
+                <div class="container d-flex justify-content center" style="text-align: center;">
+                        <div class="jumbotron" style="width:70%;margin: 0 auto;">
+                            <form class="form" action="/newEvent" method="POST">
+                                <div class="form-group form-inline justify-content-between">
+                                    <div class="form-group"><label for="evname" class="col-form-label">Name: </label>
+                                    <input type="text" class="form-control" id="evname" placeholder="The Manhattan Project" name="name" value=""></div>
+                                    <div class="form-group"><label for="category" class="col-form-label">Category: </label>
+                                    <input list="categories" class="form-control"id="category" name="category" placeholder="Select"> </div>                           
+                                <datalist id="categories">
+                                    <option value="Seminar">Seminar</option>
+                                    <option value="Quiz">Quiz</option>
+                                </datalist>
+                                </div>
+                                <div class="form-group form-inline justify-content-between">
+                                    <div class="form-group">
+                                    <label for="edate" class="col-form-label">Date: </label>
+                                    <input type="date" class="form-control" name="edate" id="edate"></div>
+                                    <div class="form-group"><label for="etime" class="col-form-label">Time: </label>
+                                    <input type="time" class="form-control" name="etime" id="etime"></div>
+                                    <div class="form-group"><label for="evenue" class="col-form-label">Venue: </label>
+                                    <input type="text" class="form-control" name="venue" placeholder="BBA Auditorium" id="evenue"></div>
+                                </div>
+                                <div class="form-group">
+                                    
+                                    <input type="url" class="form-control" id="image" placeholder="Image URL" name="image" value="">
+                                </div>
+                                <div class="form-group">
+                                    
+                                    <textarea name="description" placeholder="Description" class="form-control" id="description" cols="30" rows="10"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="reglink" class="col-form-label">Registration Link</label>
+                                    <input type="text" class="form-control" name="reglink" placeholder="www.google.com" id="reglink">
+                                </div>
+                                <button class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>                    
+<% include partials/footer.ejs %>
