@@ -7,14 +7,14 @@ var express     = require("express"),
     
     LocalStrategy = require("passport-local"),
     
-    User        = require("./models/User"),
-    ImageRoute  =require("./routes/ImageRoute")
-    EventRoute    =require("./routes/EventRoute"),
-    UserRoute   =require("./routes/UserRoute"),
-    BlogRoute  =require("./routes/BlogRoute"),
-    ContactUsRoute=require("./routes/ContactUsRoute"),
-    ProjectRoute=require("./routes/ProjectRoute"),
-    MemberRoute=require("./routes/MemberRoute"),
+    User        = require("/models/User"),
+    ImageRoute  =require("/routes/ImageRoute")
+    EventRoute    =require("/routes/EventRoute"),
+    UserRoute   =require("/routes/UserRoute"),
+    BlogRoute  =require("/routes/BlogRoute"),
+    ContactUsRoute=require("/routes/ContactUsRoute"),
+    ProjectRoute=require("/routes/ProjectRoute"),
+    MemberRoute=require("/routes/MemberRoute"),
     
     session = require("express-session"),
     flash=require('express-flash'),
@@ -95,8 +95,5 @@ var port=process.env.PORT || 8080;
 app.listen(port,function(){
     console.log("Server active at port 8080");
 });
-//app.listen(process.env.PORT, process.env.IP, function(){
-//   console.log("The 3D Server Has Started!");
-//});
 
 
