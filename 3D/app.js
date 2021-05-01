@@ -90,9 +90,9 @@ app.use(ContactUsRoute);
 app.use(MemberRoute);
 app.use(ProjectRoute);
 
+const port=process.env.PORT;
 
-
-app.listen(2000,function(){
+app.listen(port,function(){
     console.log("Server active at port 2000");
 });
 //app.listen(process.env.PORT, process.env.IP, function(){
