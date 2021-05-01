@@ -1,0 +1,31 @@
+<% include ./partials/header %>
+<style>
+    #Sear{
+        visibility: hidden;
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
+<div class="container">
+    
+	<div class="login-box" >
+		<div class="" style="justify-content: center;text-align: center;">
+				<div class="login-logo">
+					<img src="../images/3D.png" alt="3D" class="logo" width="" height="27">
+                <span style="font-family: 'Knewave', cursive;font-size: x-large;">3DtechClub</span>
+				</div>
+				<h3>Reset Password</h3>
+				<form action="/reset/<%= token %>" method="POST" autocomplete="off" style="text-align: center;">
+					<div class="login-form">
+						<input type="password" name="password" value="" placeholder="New password" autofocus="autofocus" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required style="margin-bottom:10px;"/>
+						<input type="password" name="confirm" value="" placeholder="Confirm password" autofocus="autofocus" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required style="margin-bottom:10px;"/>
+					
+					</div>
+					
+					<button class="btn btn-primary" style="width: 80%;">Update Password</button>
+				</form>
+					
+						  
+		</div>
+	</div>
+	</div>
+<% include ./partials/footer %>
