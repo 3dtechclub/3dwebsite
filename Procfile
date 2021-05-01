@@ -1,1 +1,1 @@
-web: node ../3D/app.js
+web: node ./3D/app.js
