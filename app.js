@@ -90,11 +90,11 @@ app.use(ContactUsRoute);
 app.use(MemberRoute);
 app.use(ProjectRoute);
 
-
-
-app.listen(2000,function(){
+const port = process.env.PORT || 4000;
+app.listen(port);
+/**app.listen(2000,function(){
     console.log("Server active at port 2000");
-});
+});**/
 //app.listen(process.env.PORT, process.env.IP, function(){
 //   console.log("The 3D Server Has Started!");
 //});
