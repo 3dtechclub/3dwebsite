@@ -1,0 +1,180 @@
+<% include partials/header %>
+<style>
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+}
+.card{
+  opacity: 0;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.card:hover .image{
+  opacity: 0.3;
+}
+.text {
+  color:initial;
+  width: 90%;
+  font-size: inherit;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: justify;
+}
+.card-columns{
+  column-count: 2;
+}
+@media screen and (max-width:552px){
+  .desc{
+    display: none;
+  }
+}
+@media screen and (min-width:768px)and (max-width: 1200px){
+  .desc{
+    display: none;
+  }
+}
+@media screen and (max-width:768px){
+  
+  .card-columns{
+    column-count: 1;
+  }
+   
+}
+@keyframes fadeInUpAnimation {
+    from {
+        transform: translate3d(0,40px,0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+    
+}
+
+@-webkit-keyframes fadeInUpAnimation {
+    from {
+        transform: translate3d(0,40px,0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+}
+
+.projectappear{
+  
+  animation: fadeInUpAnimation ease 0.75s ;
+        animation-iteration-count: 1; 
+        animation-fill-mode: forwards;
+        -webkit-animation: fadeInUpAnimation ease 0.75s;
+        -webkit-animation-iteration-count: 1; 
+        -webkit-animation-fill-mode: forwards;
+}
+
+</style>
+
+<div class="container">
+  <div class="card-columns">
+    
+    <% projects.forEach(function(project,index){
+        %>
+        <div class="card">
+          <a href="/project/<%= project.id %>" class="proj" ><img src="<%= project.image %>" alt="Avatar" class="image">
+          
+          <div class="overlay">
+
+            <div class="text">
+              <h2 style="text-align: center;"><%= project.name %></h2>
+                    
+            </div>
+          </div>
+          </a>
+        </div>
+        
+        
+           <!-- -->
+                
+        <% }); %>
+      
+      </div>
+    
+</div>
+<% if(currentUser&&currentUser.isAdmin==true){ %>
+    <div style="position:fixed;right:10%;bottom: 10%;">
+      <a href="/newProject"><button class="ui circular large icon button"><i class="fas fa-plus fa-xl"></i></button></a>
+    </div>
+    <% } %>
+    <% if(projects.length==0){ %>
+      <div style="width: 100%;position: fixed;top: 40%;text-align: center;"><h1>No matching projects available.</h1></div>
+      <style>#footer{
+        position: fixed;bottom: 0%;text-align: center;
+      }</style>
+      <% } %>
+    <div style="width: 100%;" id="footer" class="row justify-content-center ">
+      <div class="col-md-12 text-center py-5">
+        <p>
+      Copyright &copy;<script>document.write(new Date().getFullYear());</script> 3DtechClub All rights reserved 
+    </p>
+      </div>
+    </div>
+</body>
+<script>
+    document.getElementById("Sear").action = "/ProjectSearch";
+    $('#textsend').attr('placeholder','Search Projects');
+
+    const appearOptions={
+              threshold:0.4,
+              
+            };
+            $(document).ready(function(){
+            const faders=document.querySelectorAll('.card');
+            const appearOnScroll=new IntersectionObserver(function(entries,appearOnScroll) 
+            {
+              entries.forEach(entry => {
+                if(!entry.isIntersecting){
+                  return;
+                }
+                else{
+                  entry.target.classList.add('projectappear');
+                  appearOnScroll.unobserve(entry.target);
+                }
+              })
+            },
+            appearOptions);
+            faders.forEach(fader => {
+              appearOnScroll.observe(fader);            
+            });
+            
+          });         
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.js"></script>
+
+</html>

@@ -1,0 +1,40 @@
+<% include partials/header.ejs %>
+<style>
+    #Sear{
+        visibility: hidden;
+    }
+    
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
+<div class="container d-flex justify-content-around" style="flex-wrap:wrap-reverse;">
+    
+<div class="login-box"  style="background-color: white;">
+    <div class="" style="justify-content: center;text-align: center;">
+            <div class="login-logo">
+                <img src="../images/3D.png" alt="3D" class="logo" width="" height="27">
+                <span style="font-family: 'Knewave', cursive;font-size: x-large;">3DtechClub</span>
+            </div>
+            <form action="/user/login" method="POST" autocomplete="off" style="text-align: center;">
+                <div class="login-form">
+                <input class="form-control" type="text" name="username" placeholder="Username" required>
+                <input class="form-control" type="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                
+                </div>
+                
+                <button class="btn btn-primary" style="width: 80%;">Next</button>
+            </form>
+                <a href="/user/forgot">Forgot Username or Password?</a>
+                <a href="/user/register"><button class="btn btn-outline-primary" style="margin-top:30px;width: 80%;">Create an Account</button></a>
+                      
+    </div>
+</div>
+<div style="font-family: 'Knewave', cursive;font-size: xx-large;text-align: center;margin-top: 5%;">Welcome to <div style="font-family: 'Knewave', cursive;font-size: xxx-large;">3D</div>
+<div style="font-family: 'Knewave', cursive;font-size: x-large;">Please enter your login credentials</div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.js"></script>
+
+</html>

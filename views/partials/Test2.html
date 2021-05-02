@@ -1,0 +1,105 @@
+<span id="share">
+    <a href="<%= meme.image %>" target="_blank" download class="circular ui icon red button" > 
+            <i class="download icon"></i>
+    </a>             
+    <a href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=<%= meme.image %>" target="_blank" rel="noopener" class="ui circular green icon button">
+                <i class="whatsapp icon"></i>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<%= meme.image %>&amp;src=sdkpreparse" target="_blank" class="ui circular facebook icon button" class="fb-xfbml-parse-ignore" data-href="https://www.google.com">
+                <i class="facebook icon"></i>
+    </a>
+    <a href="https://twitter.com/intent/tweet?via=theMemer&url=<%= meme.image %>&text=place%20website%20name%20here" target="_blank" rel="noopener" class="ui circular twitter icon button">
+                <i class="twitter icon"></i>
+    </a>
+    <a href="" target="_blank" class="ui circular icon button">
+        <i class="envelope icon"></i>
+    </a>
+    
+</span>
+
+#share{
+  width: 210px;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  display: none;
+}
+
+<div class="dropdown">
+
+  <button class="ui circular icon button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-share"></i>
+  </button>
+  <div class="dropdown-menu" >
+       <a href="<%= meme.image %>" target="_blank" download class="circular ui icon red button" > 
+               <i class="download icon"></i>
+       </a>             
+       <a href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=<%= meme.image %>" target="_blank" rel="noopener" class="ui circular green icon button">
+                   <i class="whatsapp icon"></i>
+       </a>
+       <a href="https://www.facebook.com/sharer/sharer.php?u=<%= meme.image %>&amp;src=sdkpreparse" target="_blank" class="ui circular facebook icon button" class="fb-xfbml-parse-ignore" data-href="https://www.google.com">
+                   <i class="facebook icon"></i>
+       </a>
+       <a href="https://twitter.com/intent/tweet?via=theMemer&url=<%= meme.image %>&text=place%20website%20name%20here" target="_blank" rel="noopener" class="ui circular twitter icon button">
+                   <i class="twitter icon"></i>
+       </a>
+       <a href="" target="_blank" class="ui circular icon button">
+           <i class="envelope icon"></i>
+       </a>        
+  </div>
+</div>
+
+
+<div class="dropdown">
+    <button class="ui circular icon button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <i class="fas fa-share"></i>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a href="<%= meme.image %>" target="_blank" download class="circular ui icon inverted large red button" > 
+                    <i class="download icon"></i>
+            </a>             
+            <a href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=<%= meme.image %>" target="_blank" rel="noopener" class="ui circular inverted large green icon button">
+                        <i class="whatsapp icon"></i>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<%= meme.image %>&amp;src=sdkpreparse" target="_blank" class="ui circular facebook inverted large icon button" class="fb-xfbml-parse-ignore" data-href="https://www.google.com">
+                        <i class="facebook icon"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?via=theMemer&url=<%= meme.image %>&text=place%20website%20name%20here" target="_blank" rel="noopener" class="ui circular inverted large twitter icon button">
+                        <i class="twitter icon"></i>
+            </a>
+            <a href="" target="_blank" class="ui circular inverted large icon button">
+                <i class="envelope icon"></i>
+            </a>        
+        </div>
+</div>
+
+
+
+.card:hover #dropdownMenuButton{
+  display:flex;
+  justify-content: start;
+}
+
+
+<li class="nav-item" >
+  <a class="nav-link" href="/logout">
+    <button class="ui circular large button" style="border-radius: 35px;display: inline-flexbox;background-color:  rgba(239, 241, 244, 0.5)">Logout</button>
+  </a>
+</li>
+
+
+User.findById(foundMeme.userid,function(err,thisUser){
+  if(err)
+  {console.log(err);}
+  else
+  {
+      var cmemes=new Array();
+      var arr=thisUser.images;
+      
+      console.log(arr);
+      res.render("display.ejs",{thisMeme:foundMeme,memes:MemeBase.findById(arr)});
+  }
+});

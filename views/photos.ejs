@@ -1,0 +1,397 @@
+
+
+  <% include partials/header.ejs %>
+  
+    <base href="./public/">
+  
+    
+  
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body>
+  
+
+  <div class="site-wrap">
+
+  <!--<div class="site-mobile-menu">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>-->
+
+  <!--<header class="header-bar d-flex d-lg-block align-items-center" data-aos="fade-left">
+    <div class="site-logo">
+      <a href="index.html">Shutter</a>
+    </div>
+    
+    <div class="d-inline-block d-xl-none ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+    <div class="main-menu">
+      <ul class="js-clone-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="bio.html">Bio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="social js-clone-nav">
+        <li><a href="#"><span class="icon-facebook"></span></a></li>
+        <li><a href="#"><span class="icon-twitter"></span></a></li>
+        <li><a href="#"><span class="icon-instagram"></span></a></li>
+      </ul>
+    </div>
+  </header> -->
+  <div class="container justify-content-center">
+  <main class="main-content">
+    <div class="container-fluid photos">
+      <div class="row align-items-stretch">
+        <% var n=0;var t; %>
+        <% albums.forEach(function(album){ 
+          if(n%13==0){t=8;}
+          else if(n%13==1){t=4;}
+          else if(n%13==2){t=3;}
+          else if(n%13==3){t=6;}
+          else if(n%13==4){t=3;}
+          else if(n%13==5){t=6;}
+          else if(n%13==6){t=6;}
+          else if(n%13==7){t=4;}
+          else if(n%13==8){t=4;}
+          else if(n%13==9){t=4;}
+          else if(n%13==10){t=3;}
+          else if(n%13==11){t=6;}
+          else if(n%13==12){t=3;}
+          %>
+        <div class="col-6 col-md-6 col-lg-<%=t%> aos-init" data-aos="fade-up" data-aos-delay="">
+          <a href="/Gallery/<%= album.id %>" class="d-block photo-item">
+            <img src="<%= album.images[0] %>" alt="Image" class="img-fluid" >
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading"><%= album.name %></h3>
+              <span class="meta"><%= album.count %> Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        <% n=n+1;}); %>
+        <% n=0; %>
+        <!--<div class="col-6 col-md-6 col-lg-8" data-aos="fade-up">
+          <a href="/Gallery/special" class="d-block photo-item">
+            <img src="images/img_4.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        
+          <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <a href="/Gallery/special" class="d-block photo-item">
+            <img src="images/img_5.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up">
+          <a href="/Gallery/special" class="d-block photo-item">
+            <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        
+
+        <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_6.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_7.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_8.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_9.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_10.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-6 col-lg-8" data-aos="fade-up" data-aos-delay="">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_4.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_5.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_6.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_7.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_8.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-6 col-lg-8" data-aos="fade-up" data-aos-delay="100">
+          <a href="single.html" class="d-block photo-item">
+            <img src="images/img_9.jpg" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">Photos Title Here</h3>
+              <span class="meta">42 Photos</span>
+            </div>
+            </div>
+          </a>
+        </div>-->
+        
+
+      </div>
+      <div class="modal fade" id="newAlbumModal" tabindex="-1" aria-labelledby="newAlbumModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="newAlbumModalLabel">New Album</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="/newAlbum" method="POST">
+                <div class="form-group  justify-content-between">
+                    <div class="form-group">
+                        
+                        <input type="text" id="AlbumName" class="form-control" placeholder="Album Name" name="albumname">
+                    </div>
+                    
+                    <div class="form-group">
+                        
+                        <textarea type="text" id="ImgURL" class="form-control" placeholder="Image URLs; separate with comma" name="links"></textarea>
+                    </div>
+                    
+                </div>
+            
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Create Album</button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% if(albums.length==0){ %>
+        <div class="container" style="width: 100%;position: fixed;top: 40%;text-align: center;"><h1>No matching projects available.</h1></div>
+        <style>#footer{
+          position: fixed;bottom: 0%;text-align: center;width: 100%;
+        }</style>
+        <% } %>
+      <div class="container row justify-content-center" id="footer">
+        <div class="col-md-12 text-center py-5">
+          <p>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> 3DtechClub All rights reserved 
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+</div> <!-- .site-wrap -->
+
+<% if(currentUser&&currentUser.isAdmin==true){ %>
+  <div style="position:fixed;right:10%;bottom: 10%;">
+    <button class="ui circular large icon button" data-toggle="modal" data-target="#newAlbumModal"><i class="fas fa-plus fa-xl"></i></button>
+  </div>
+  <% } %>
+  <script>
+    document.getElementById("Sear").action = "/AlbumSearch";
+    $('#textsend').attr('placeholder','Search Albums');
+  </script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/jquery.fancybox.min.js"></script>
+
+  <script src="js/main.js"></script>

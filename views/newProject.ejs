@@ -1,0 +1,14 @@
+<% include partials/header %>
+<div class="container">
+<form action="/newProject" method="POST">
+    <input type="text" class="form-control" name="name" placeholder="Name">
+    <input type="url" class="form-control" name="image" placeholder="Image">
+    <input type="text" class="form-control" name="category" placeholder="Category">
+    <input type="text" class="form-control" name="hone" placeholder="Intro header. Separate by '||'">
+    <textarea name="images" class="form-control" cols="30" rows="200" placeholder="Separate images by ' || '"></textarea>
+    <textarea name="description" class="form-control" id="" cols="30" rows="10" placeholder="Description"></textarea>
+    <textarea name="members" class="form-control" id="" cols="30" rows="10" placeholder="Team Members"></textarea>
+    <input type="number" class="form-control" name="contact" id="" placeholder="Contact number">
+    <input type="submit" class="form-control" name="" id="">
+</form>
+</div>

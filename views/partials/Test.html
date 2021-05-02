@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" integrity="sha256-QVBN0oT74UhpCtEo4Ko+k3sNo+ykJFBBtGduw13V9vw=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" integrity="sha256-QVBN0oT74UhpCtEo4Ko+k3sNo+ykJFBBtGduw13V9vw=" crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<style>
+    .dropdown-menu{
+        padding: 5px 5px 5px 5px;
+        justify-content: space-around;
+        border-radius: 10px;
+        
+    }
+    .close{
+      position: absolute;
+        bottom: 93%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+    }
+    .close:focus{
+      outline: none;
+    }
+</style>
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <img src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">
+      <div class="dropdown">
+        <button class="ui circular icon button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-share"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a href=""class="circular ui icon red button" > 
+                        <i class="download icon"></i>
+                </a>             
+                <a href="" class="ui circular green icon button">
+                            <i class="whatsapp icon"></i>
+                </a>
+                <a href="" class="ui circular facebook icon button">
+                            <i class="facebook icon"></i>
+                </a>
+                <a href="" class="ui circular twitter icon button">
+                            <i class="twitter icon"></i>
+                </a>
+                <a href="" target="_blank" class="ui circular icon button">
+                    <i class="envelope icon"></i>
+                </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <img src="" alt="">
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
+
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <img src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Default modal
+</button>
+
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" style="color: white">×</span>
+            </button>
+      <img src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">  
+    
+    </div>
+  </div>
+</div>
+
+<div class="dropdown">
+    <button class="ui circular icon button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-share"></i>
+    </button>
+    <div class="dropdown-menu" id="dropd" aria-labelledby="dropdownMenuButton">
+            <a href=""class="circular ui icon large red button" > 
+                    <i class="download icon"></i>
+            </a>             
+            <a href="" class="ui circular icon large green button">
+                        <i class="whatsapp icon"></i>
+            </a>
+            <a href="" class="ui circular facebook large icon button">
+                        <i class="facebook icon"></i>
+            </a>
+            <a href="" class="ui circular twitter large icon button">
+                        <i class="twitter icon"></i>
+            </a>
+            <a href="" target="_blank" class="ui circular large icon button">
+                <i class="envelope icon"></i>
+            </a>
+    </div>
+  </div> 
