@@ -2,7 +2,7 @@
 {
   "name" : "3dwebsite",
   "scripts":{
-    "start": "node 3D/app.js"
+    "start": "node app.js"
   },
   "requires": true,
   "lockfileVersion": 1,
