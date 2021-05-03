@@ -1,6 +1,4 @@
 {
-  "scripts": {
-    "start": "node app.js"},
   "name": "3d",
   
   "version": "1.0.0",
@@ -39,6 +37,8 @@
     "type": "git",
     "url": "3dwebsite"
   },
+  "scripts": {
+    "start": "node app.js"},
   "author": "",
   "license": "ISC"
 }
