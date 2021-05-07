@@ -6,7 +6,9 @@
     width: 100%;
     color: white;
 }
-
+::-webkit-scrollbar{
+          display: none;
+        }
 .navbar.navbar-inverse .navbar-header{
 float: none; 
 }
